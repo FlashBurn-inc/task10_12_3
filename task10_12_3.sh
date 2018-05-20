@@ -210,7 +210,7 @@ runcmd:
   - cp /mnt/docker/certs/* /srv/certs
   - cp /mnt/docker/etc/* /srv/etc/
   - umount /mnt
-  - docker run -d --name nginx -p ${VM1_EXTERNAL_IP}:${NGINX_PORT}:443 -v /srv/etc/nginx.conf:/etc/nginx/conf.d/default.conf:ro -v /srv/certs:/etc/ssl/certs:ro -v ${NGINX_LOG_DIR}:/var/log/nginx ${NGINX_IMAGE}
+  - docker run -d --name nginx -p ${VM1_EXTERNAL_IP}:${NGINX_PORT}:443 -v /srv/etc/nginx.conf:/etc/nginx/conf.d/default.conf:ro -v /srv/certs:/etc/ssl:ro -v ${NGINX_LOG_DIR}:/var/log/nginx ${NGINX_IMAGE}
 
 userdatavm1
 
