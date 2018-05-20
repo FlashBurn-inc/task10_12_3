@@ -179,8 +179,6 @@ cat $way/config-drives/$VM2_NAME-config/meta-data
 echo ${bold}"user-data $VM1_NAME"${n}
 cat << userdatavm1 > $way/config-drives/$VM1_NAME-config/user-data
 #cloud-config
-password: qwerty
-chpasswd: { expire: False }
 ssh_authorized_keys:
   - $(cat  $SSH_PUB_KEY)
 apt_update: true
@@ -270,8 +268,8 @@ virt-install \
   --graphics vnc,port=-1 \
   --noautoconsole --quiet --import
 
-echo "sleep 30sec"
-sleep 30
+echo "sleep 90sec"
+sleep 90
 
 qemu-img resize $VM2_HDD +2G
 virt-install \
